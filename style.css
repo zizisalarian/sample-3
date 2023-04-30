@@ -1,0 +1,1464 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: inline-block !important;
+}
+
+
+@font-face {
+  font-family: iran;
+  src: url(font/FontsFree-Net-ir_sans\ \(1\).woff);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: visible !important;
+  font-family: iran;
+  background: radial-gradient(circle, #5b8ebb 0%, #003C71 100%);
+  background: #003C70;
+}
+
+section#offcanvas {
+  width: 260px;
+  height: 100vh;
+  background-color: #e3e3e3;
+  position: fixed;
+  right: -260px;
+  transition: 0.5s ease;
+}
+
+section#offcanvas.navIsOpen {
+  right: 0;
+}
+
+
+main {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+main.navIsOpen {
+  transform: translatex(-260px);
+}
+
+main div#top-header {
+  border-bottom: 1px rgba(255, 255, 255, 0.712) solid;
+  background-color: #3498db;
+}
+
+.logo-img {
+  width: 100%;
+  /* box-shadow:0px -30px 20px 30px #000 inset */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+}
+
+.logo-img img {
+  margin-top: 100px;
+  width: 100%;
+}
+
+main header {
+  background: radial-gradient(circle, #5b8ebb 0%, #003C71 100%);
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 300;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.493);
+}
+
+main header.active {
+  background: radial-gradient(circle, #5b8ebb 0%, #003C71 100%);
+}
+
+main header div.container>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  position: relative;
+}
+
+main header div.container div.right {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main header div.container div.right div#headersearch {
+  position: relative;
+  text-align: left;
+}
+
+main header div.container div.right div#headersearch button#srchbtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  border: white 1px solid;
+  font-size: 0.8em;
+  background-color: transparent;
+}
+
+main header div.container div.right div#headersearch input#srchform {
+  height: 30px;
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+main header div.container div.right div#headersearch input#srchform.isOpen {
+  opacity: 1;
+}
+
+main header div.container div.right nav {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+main header div.container div.right nav div.cdropdown {
+  font-size: 0.9em;
+  display: inline-block;
+  position: relative;
+  z-index: 200;
+}
+
+main header div.container div.right nav div.cdropdown:hover .cdropdowncontent {
+  display: block;
+  transform: translateY(0);
+}
+
+main header div.container div.right nav div.cdropdown>a {
+  position: relative;
+  padding: 15px 30px;
+  color: white !important;
+  padding-right: 0;
+}
+
+main header div.container div.right nav div.cdropdown>a::after {
+  content: "";
+  background-color: rgba(46, 19, 74, 0.6784313725);
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  transform: translateX(50%);
+  right: 50%;
+  margin-bottom: 10px;
+  width: 0;
+  transition: ease 0.4s;
+}
+
+main header div.container div.right nav div.cdropdown:hover>a::after {
+  /* width: 100%; */
+}
+
+main header div.container div.right nav div.cdropdown div.cdropdowncontent {
+  position: absolute;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  display: none;
+  width: 150%;
+  transition: 0.3s;
+  border-radius: 5px;
+  /* transform: translateY(-90%); */
+  z-index: 999;
+  overflow: hidden;
+}
+
+main header div.container div.right nav div.cdropdown div.cdropdowncontent a {
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none !important;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+main header div.container div.right nav div.cdropdown div.cdropdowncontent a:hover {
+  background-color: #eee;
+  text-decoration: none !important;
+}
+
+/* main
+  header
+  div.container
+  div.right
+  nav
+  div.cdropdown
+  div.cdropdowncontent
+  a:hover {
+    text-decoration: underline !important;
+} */
+main header div.container div.right nav div.cdropdown div.cdropdowncontent a i {
+  margin-left: 6px;
+}
+
+main header div.container div.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+}
+
+main section#news {
+  background: rgb(47, 184, 192);
+  background: radial-gradient(circle, #5b8ebb 0%, #003C71 100%);
+  padding-bottom: 50px;
+  padding-top: 100px;
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.493);
+  z-index: 99;
+}
+
+main section#news div.container div.tabbtns {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+main section#news div.container div.tabbtns button {
+  border: none;
+  background-color: transparent;
+  border: 1px white solid;
+  padding: 15px 40px;
+  font-size: 0.9em;
+  margin: 0 5px;
+  border-radius: 40px;
+  color: white;
+  transition: 0.3s;
+}
+
+main section#news div.container div.tabbtns button.isactive {
+  background-color: white;
+  color: #3498db;
+}
+
+main section#news div.container div.tabcontent {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main section#news div.container div.tabcontent.isactive {
+  display: flex;
+}
+
+main section#news div.container div.tabcontent div.slide-show {
+  width: 46%;
+  overflow: hidden;
+}
+
+main section#news div.container div.tabcontent div.slide-show .carousel-inner {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.575);
+}
+
+.carousel-item {
+  height: 350px;
+}
+
+main section#news div.container div.tabcontent div.slide-show div.carousel-caption.d-none.d-md-block {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.801), transparent);
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 2em 0;
+}
+
+main section#news div.container div.tabcontent div.slide-show div.carousel-caption.d-none.d-md-block p {
+  margin: 0;
+}
+
+main section#news div.container div.tabcontent div.textnews {
+  width: 50%;
+  overflow-y: scroll;
+  height: 350px;
+  padding-left: 5px;
+}
+
+main section#news div.container div.tabcontent div.textnews div.card:first-child {
+  margin-top: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+main section#news div.container div.tabcontent div.textnews div.card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  background-color: #d7e6f4;
+  border: none;
+  margin: 10px 0;
+  height: 110px;
+  padding-right: 15px;
+  border-radius: 15px;
+}
+
+.archive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.archive-btn {
+  background-color: #61bff1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  box-shadow: -2px -2px 6px #3b3d40;
+  margin-bottom: 10px;
+}
+
+.archive-btn:hover {
+  background-color: #20244d;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+
+
+
+.tab__video {
+  display: flex;
+  flex-direction: column;
+  width: 48% !important;
+  overflow: hidden;
+
+}
+
+.tab__video .video-container {
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.534);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.tab__video video {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.tab__video a {
+  display: block !important;
+  height: 0;
+}
+
+.tab__video i {
+  font-size: 80px;
+  color: #fff;
+  transform: translate(-239px, -233px);
+  cursor: pointer;
+  display: none;
+}
+
+.archive__pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pic-btn {
+  background-color: #61bff1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  box-shadow: -2px -2px 6px #3b3d40;
+  margin-bottom: 10px;
+}
+
+.pic-btn:hover {
+  background-color: #20244d;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.archive__video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.video-btn {
+  background-color: #61bff1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  box-shadow: -2px -2px 6px #3b3d40;
+  margin-bottom: 10px;
+}
+
+.video-btn:hover {
+  background-color: #20244d;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+main section#news div.container div.tabcontent div.textnews div.card div.left p.light {
+  font-size: 0.7em;
+  color: rgba(50, 58, 66, 0.6352941176);
+  margin-bottom: 5px;
+}
+
+main section#news div.container div.tabcontent div.textnews div.card div.left p.bold {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #1a2c3f;
+}
+
+main section#news div.container div.tabcontent div.textnews div.card div.right {
+  width: 140px;
+  margin-left: 20px;
+}
+
+main section#news div.container div.tabcontent div.textnews div.card div.right img {
+  width: 100%;
+  height: 85px;
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+
+main section#news div.container div.tabcontent#servicetable a {
+  width: 20%;
+}
+
+main section#news div.container div.tabcontent#servicetable a div.card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em 0;
+  background-color: rgba(255, 255, 255, 0.767);
+  position: relative;
+}
+
+main section#news div.container div.tabcontent#servicetable a div.card#cardselected {
+  padding: 0.45em 0;
+}
+
+/* main section#news div.container div.tabcontent#servicetable a div.card:hover {
+  background-color: white;
+} */
+main section#news div.container div.tabcontent#servicetable a div.card img {
+  width: 70%;
+  margin-bottom: 2em;
+}
+
+main section#news div.container div.tabcontent#servicetable a div.card::before {
+  border-radius: 500px;
+  content: " ";
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #3498db;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  transform: translate(50%, -50%) rotate(0);
+  transition: transform 0.4s linear 0s;
+}
+
+main section#nashr {
+  background-color: #fdfdfd !important;
+  padding: 40px 0;
+}
+
+main section#nashr div.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  /* This container is needed to position the front and back side */
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* Position the front and back side */
+  /* Style the front side (fallback if image is missing) */
+  /* Style the back side */
+}
+
+main section#nashr div.container .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+main section#nashr div.container .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+}
+
+
+
+main section#nashr div.container .flip-card-front,
+main section#nashr div.container .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  border-radius: 15px;
+  backface-visibility: hidden;
+}
+
+main section#nashr div.container .flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+main section#nashr div.container .flip-card-back {
+  background-color: #3498db;
+  padding-top: 40px;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+main section#nashr div.container div.tabnews {
+  width: 400px;
+  background-color: #e3e3e3;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+main section#nashr div.container div.tabnews .tabheading {
+  border-bottom: 1px solid #3498db;
+  display: flex;
+  justify-content: flex-start;
+}
+
+main section#nashr div.container div.tabnews .tabheading button {
+  background-color: transparent;
+  padding: 10px 15px;
+  margin: 0;
+  border: none;
+  font-size: 0.8em;
+  transition: 0.3s;
+}
+
+main section#nashr div.container div.tabnews .tabheading button:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+main section#nashr div.container div.tabnews .tabheading button.isactive {
+  background-color: #3498db;
+  color: white;
+}
+
+main section#nashr div.container div.tabnews .tabcontent {
+  display: none;
+  padding: 20px;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+main section#nashr div.container div.tabnews .tabcontent.isactive {
+  display: block;
+}
+
+main section#nashr div.container div.tabnews .tabcontent::-webkit-scrollbar {
+  width: 6px;
+}
+
+main section#nashr div.container div.tabnews .tabcontent::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.37);
+  border-radius: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+main section#nashr div.container div.tabnews .tabcontent:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.788);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+main section#nashr div.container div.tabnews .tabcontent ul {
+  padding-right: 30px;
+}
+
+main section#nashr div.container div.tabnews .tabcontent ul li {
+  padding: 10px 0;
+  list-style: none;
+  position: relative;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+main section#nashr div.container div.tabnews .tabcontent ul li::before {
+  content: url(https://www.ihcs.ac.ir/assets/bd23d51/images/icons/no-text-logo.png);
+  position: absolute;
+  right: -30px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+main section#nashr div.container div.moarefi {
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+}
+
+main section#nashr div.container div.moarefi div.owl-carousel .owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+main section#nashr div.container div.moarefi div.owl-carousel .owl-dots .owl-dot {
+  background-color: rgba(128, 128, 128, 0.541) !important;
+  padding: 7px !important;
+  border-radius: 50%;
+  margin: 0 7px;
+}
+
+main section#nashr div.container div.moarefi div.owl-carousel .owl-dots .owl-dot.active {
+  background-color: #3498db !important;
+}
+
+main section#nashr div.container div.moarefi div.owl-carousel div.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 340px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+main section#nashr div.container div.moarefi div.owl-carousel div.item img {
+  height: 100%;
+}
+
+main section#nashr div.container div.moarefi div.owl-carousel div.item:hover h4 {
+  padding-top: 100px;
+}
+
+main section#nashr div.container div.moarefi div.owl-carousel div.item h4 {
+  text-align: center;
+  position: absolute;
+  bottom: -7px;
+  width: 100%;
+  background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  padding-top: 40px;
+  padding-bottom: 20px;
+  color: white;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+main section#nashr div.container div.taze {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+main section#nashr div.container div.taze:hover h5 {
+  padding-top: 100px;
+}
+
+main section#nashr div.container div.taze h5 {
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  color: white;
+  padding: 20px 0;
+  transition: 0.3s;
+}
+
+main section#awards {
+  padding: 50px 0;
+  background-color: #c9c9c9;
+}
+
+main section#awards h4 {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+
+  margin-bottom: 60px;
+}
+
+main section#awards h4::after {
+  content: "";
+  width: 200px;
+  height: 3px;
+  border-radius: 25%;
+  background-color: #3498db;
+  position: absolute;
+  bottom: -20px;
+  transform: translatex(-50%);
+  left: 50%;
+}
+
+main section#awards div.cards {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+main section#awards div.cards div.award {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main section#awards div.cards div.award p {
+  font-size: 1.1em;
+  margin-top: 15px;
+}
+
+main section#awards div.cards div.award span {
+
+  font-size: 2em;
+}
+
+main section#sites {
+  background: radial-gradient(circle, #5b8ebb 0%, #003C71 100%);
+
+  padding: 30px 0;
+}
+
+main section#sites div.owl-carousel .owl-dot {
+  display: none;
+}
+
+main section#sites div.owl-carousel .owl-nav {
+  position: absolute;
+  left: 0;
+  transform: translateY(50%);
+  bottom: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main section#sites div.owl-carousel .owl-nav span {
+  display: inline-block;
+  font-size: 3em;
+  background-color: rgba(255, 255, 255, 0.233);
+  width: 30px;
+  transition: 0.2s;
+}
+
+main section#sites div.owl-carousel .owl-nav span:hover {
+  background-color: white;
+}
+
+main section#sites div.owl-carousel div.owl-item {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+main section#sites div.owl-carousel div.item {
+  width: 210px;
+  text-align: center;
+}
+
+main section#sites div.owl-carousel div.item h4 {
+  color: white;
+  font-size: 1.2em;
+}
+
+main section#sites div.owl-carousel div.item img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: unset;
+  margin: 0 auto;
+}
+
+main section#services {
+  padding-bottom: 50px;
+  background-color: #fff;
+  padding-top: 60px;
+}
+
+main section#services h4 {
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+main section#services h4::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  border-radius: 25%;
+  position: absolute;
+  background-color: #3498db;
+  bottom: -10px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+main section#services div.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main section#services div.cards a {
+  display: block;
+  width: 21%;
+  margin-bottom: 1.5em;
+}
+
+main section#services div.cards a div.card {
+  padding: 0.5em 0;
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5b8ebb;
+  border: none;
+  transition: 0.3s;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+
+main section#services div.cards a div.card:hover {
+  background-color: #BCBDBF;
+  transform: scale(1.1);
+}
+
+main section#services div.cards a div.card img {
+  width: 100px;
+  margin-bottom: 2em;
+}
+
+main section#services div.cards a div.card p {
+  color: white;
+}
+
+main footer {
+  background: radial-gradient(circle, #5b8ebb 0%, #003C71 100%);
+
+  padding: 3em 0;
+}
+
+main footer div.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main footer div.container div.relations {
+  color: white;
+  width: 25%;
+}
+
+main footer div.container div.relations h4 {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 2.5em;
+}
+
+main footer div.container div.relations a {
+  font-size: 0.8em;
+  display: block !important;
+  padding: 0.5em 0;
+  transition: 0.3s;
+}
+
+main footer div.container div.relations a:hover {
+  color: rgba(184, 184, 184, 0.849) !important;
+}
+
+main footer div.container div.call {
+  width: 30%;
+  color: white;
+}
+
+main footer div.container div.call h4 {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 2em;
+}
+
+main footer div.container div.call p {
+  font-size: 0.9em;
+  display: block !important;
+  padding: 0.4em 0;
+}
+
+main footer div.container div.call p i {
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 1400px) {
+  section#nashr {
+    padding: 40px 0;
+  }
+
+  section#nashr div.container {
+    flex-wrap: wrap;
+  }
+
+  section#nashr div.container div.tabnews {
+    width: 80% !important;
+    order: 4;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  section#nashr div.container div.moarefi {
+    width: 300px;
+  }
+
+  section#nashr div.container div.taze1 {
+    order: 1;
+  }
+
+  html {
+    font-size: 0.8em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
+
+.effect-card {
+  line-height: 0;
+  background-color: #3498db;
+  position: relative;
+  border-radius: 500px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.4s linear 0s;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#table-khedmat-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.container__card {
+  box-shadow: 0 -2px 16px -8px #555;
+  border-radius: 22px;
+  padding: 20px 30px;
+}
+
+.container--img {
+  border: 2px dashed #ee46bb;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+.container--img img {
+  width: 100%;
+  height: 100%;
+}
+
+.container__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30vh;
+  text-align: center;
+  justify-content: space-between;
+  width: 240px;
+  background-color: #c6e6f3 !important;
+  /* background-color: #ffffffcc; */
+  transition: 0.08s;
+}
+
+.container__card:hover {
+  background-color: #fff !important;
+  transform: scale(1.1);
+}
+
+.container__card:hover .container--img {
+  animation: spin 10s linear infinite;
+}
+
+.container__card:hover .container--img img {
+  animation: spin2 10s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.btn-search {
+  position: relative;
+  margin-left: 90px;
+}
+
+.btn-search input {
+  background-color: #00000022;
+  border-radius: 20px;
+  border: 1px solid #ffffffdd;
+  outline: none;
+  padding: 5px;
+  padding-right: 10px;
+  color: #fff;
+}
+
+.btn-search i {
+  color: #ffffffdd;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.left-scroll-s img {
+  width: 50px !important;
+  transition: .5s;
+}
+
+#video-play {
+  cursor: pointer;
+}
+
+#video-play:hover+#video-control {
+  display: block;
+
+}
+
+.menu-icon {
+  display: none;
+}
+
+iframe {
+  width: 400px;
+  height: 350px;
+}
+main section#awards div.cards{
+  align-items: flex-start;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+
+  main header div.container div.right {
+    width: 100%;
+  }
+
+  .container__card {
+    width: 200px;
+  }
+
+  .btn-search {
+    margin-left: 0;
+  }
+
+  .carousel-item {
+    height: 280px;
+  }
+
+  .carousel-inner {
+    height: 280px;
+  }
+
+  main section#news div.container div.tabcontent div.textnews {
+    height: 280px;
+  }
+
+  .tab__video video {
+    height: 280px;
+  }
+
+  main section#news div.container div.tabcontent div.slide-show .carousel-inner {
+    height: 280px;
+  }
+
+  .tab__video .video-container {
+    height: 280px;
+  }
+
+  .shownav {
+    display: flex !important;
+    flex-direction: column;
+    background-color: #fff;
+    /* margin-right: -300px; */
+
+  }
+
+}
+
+@media only screen and (max-width: 992px) {
+  main header div.container div.right nav {
+    display: none;
+
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu-icon {
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .responsive-menu {
+    position: relative;
+  }
+
+  .responsive-menu .nav-container {
+    position: absolute;
+    width: 200px;
+    border-radius: 5px;
+    /* overflow: hidden; */
+  }
+
+  .responsive-menu .nav-container:hover {
+    border-radius: 5px;
+  }
+
+  main header div.container div.right nav div.cdropdown>a {
+    color: #333 !important;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  main header div.container div.right nav div.cdropdown:hover a {
+    border-radius: 5px 5px 0 0;
+  }
+
+  main header div.container div.right nav div.cdropdown>a:hover {
+    background-color: #ddd;
+  }
+
+  .fa-solid,
+  .fa-caret-down {
+    transform: rotate(90deg);
+  }
+
+  main header div.container div.right nav div.cdropdown div.cdropdowncontent {
+    top: 0;
+    position: absolute;
+    right: 200px;
+    z-index: 999;
+    border-radius: 0;
+  }
+
+  main section#news div.container div.tabcontent {
+    justify-content: space-around;
+  }
+
+  main section#news div.container div.tabbtns button {
+    padding: 10px 20px;
+  }
+
+  .carousel-item {
+    height: 200px;
+  }
+
+  .carousel-inner {
+    height: 200px;
+  }
+
+  main section#news div.container div.tabcontent div.textnews {
+    height: 200px;
+  }
+
+  .tab__video video {
+    height: 200px;
+  }
+
+  main section#news div.container div.tabcontent div.slide-show .carousel-inner {
+    height: 200px;
+  }
+
+  .tab__video .video-container {
+    height: 200px;
+  }
+
+  #table-khedmat-container {
+    padding: 20px 0;
+  }
+
+  main section#news div.container div.tabcontent.isactive {
+    flex-wrap: wrap;
+  }
+
+  .container__card {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  main section#nashr div.container{
+    justify-content: center !important;
+  }
+  main section#nashr div.container div.moarefi{
+    order: 3;
+  }
+  main section#nashr div.container div.taze{
+    margin: 10px;
+  }
+  .responsive-menu{
+    width: 100%;
+  }
+  .shownav{
+    width: 0;
+    display: none;
+  }
+
+  
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  main section#news div.container div.tabbtns button {
+    padding: 10px;
+  }
+
+  .carousel-item {
+    height: 150px;
+  }
+
+  .carousel-inner {
+    height: 150px;
+  }
+
+  main section#news div.container div.tabcontent div.textnews {
+    height: 150px;
+  }
+
+  .tab__video video {
+    height: 150px;
+  }
+
+  main section#news div.container div.tabcontent div.slide-show .carousel-inner {
+    height: 150px;
+  }
+
+  .tab__video .video-container {
+    height: 150px;
+  }
+
+  .container__card:hover {
+    transform: scale(1.04);
+  }
+
+  .video-btn {
+    font-size: 10px;
+    padding: 5px 20px;
+  }
+
+  .pic-btn {
+    font-size: 10px;
+    padding: 5px 20px;
+  }
+
+  main section#news div.container div.tabcontent div.textnews div.card div.left p.bold {
+    font-size: 9px;
+  }
+
+  main section#news div.container div.tabcontent div.textnews div.card {
+    height: 95px;
+  }
+
+  .archive-btn {
+    font-size: 10px;
+  }
+
+  main footer div.container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: auto;
+
+  }
+
+  main section#services div.cards a {
+    width: 80%;
+  }
+
+  main section#services div.cards {
+    justify-content: center;
+  }
+
+  main section#services div.cards a div.card {
+    height: 300px;
+  }
+
+  main footer div.container div.relations {
+    width: 90%;
+  }
+
+  main footer div.container div.call {
+    width: 90%;
+  }
+
+  main section#awards div.cards {
+    flex-wrap: wrap;
+  }
+
+  main section#nashr div.container {
+    flex-wrap: wrap;
+  }
+
+  main header div.container>div {
+    height: 50px;
+  }
+
+  main header {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .logo-img img {
+    margin-top: 50px;
+  }
+  .btn-search{
+    display: none;
+    padding: 5px;
+    position: absolute;
+    top: 150px;
+    right: 50%;
+    transform: translate(50% , -50%);
+  }
+    .btn-search input{
+      font-size: 10px;
+    }
+    .btn-search i{
+      top: 12px;
+      left: 12px;
+    }
+    main section#news div.container div.tabbtns button{
+      margin-bottom: 10px;
+
+    }
+    main section#news div.container div.tabcontent div.slide-show{
+      width: 90%;
+      margin-bottom: 30px;
+    }
+    .carousel-item {
+      height: 200px;
+    }
+  
+    .carousel-inner {
+      height: 200px;
+    }
+  
+    main section#news div.container div.tabcontent div.textnews {
+      height: 200px;
+    }
+  
+    .tab__video video {
+      height: 200px;
+    }
+  
+    main section#news div.container div.tabcontent div.slide-show .carousel-inner {
+      height: 200px;
+    }
+  
+    .tab__video .video-container {
+      height: 200px;
+    }
+    main section#news div.container div.tabcontent div.textnews{
+      width: 90%;
+    }
+    .tab__video{
+      width: 90% !important;
+    }
+    main section#awards div.cards div.award{
+      width: 100px;
+      margin: 10px 20px;
+    }
+    main section#awards div.cards div.award img{
+      width: 100%;
+    }
+    
+}
